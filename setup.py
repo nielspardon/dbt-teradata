@@ -17,7 +17,7 @@ with open(os.path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 
 package_name = "dbt-teradata"
-package_version = "1.3.3.0"
+package_version = "1.4.99"
 description = """The Teradata adapter plugin for dbt (data build tool)"""
 
 
@@ -45,7 +45,7 @@ setup(
         ],
     },
     install_requires=[
-        "dbt-core==1.3.3",
+        "dbt-core~=1.4",
         "teradatasql>=16.20.0.0",
     ],
     classifiers=[
@@ -61,6 +61,7 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
     ],
-    python_requires=">=3.7,<3.11",
+    python_requires=">=3.7,<=3.11",
 )

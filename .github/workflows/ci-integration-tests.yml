@@ -5,12 +5,13 @@ on:
   push:
     branches:
       - 'main'
+      - 'par-1.4.99'
 
 jobs:
   test:
     strategy:
       matrix:
-        python: ['3.7', '3.8', '3.9','3.10']
+        python: ['3.7', '3.8', '3.9','3.10','3.11']
     runs-on: macos-10.15
     name: Functional test
     steps:

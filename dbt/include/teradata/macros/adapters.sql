@@ -62,10 +62,6 @@
 
 {% endmacro %}
 
-{% macro teradata__current_timestamp() -%}
-CURRENT_TIMESTAMP(6)
-{%- endmacro %}
-
 {% macro teradata__rename_relation(from_relation, to_relation) -%}
   {#
     Teradata rename fails when the relation already exists, so a 2-step process is needed:
