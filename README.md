@@ -31,14 +31,15 @@ At a minimum, you need to specify `host`, `user`, `password`, `schema` (database
 
 ## Python compatibility
 
-| Plugin version | Python 3.6  | Python 3.7  | Python 3.8  | Python 3.9  | Python 3.10 |
+| Plugin version | Python 3.6  | Python 3.7  | Python 3.8  | Python 3.9  | Python 3.10 | 3.11 |
 | -------------- | ----------- | ----------- | ----------- | ----------- | ----------- |
-| 0.19.0.x           | ✅          | ✅          | ✅          | ❌          | ❌          |
-| 0.20.0.x           | ✅          | ✅          | ✅          | ✅          | ❌          |
-| 0.21.1.x           | ✅          | ✅          | ✅          | ✅          | ❌          |
-| 1.0.0.x           | ❌           | ✅          | ✅          | ✅          | ❌          |
-|1.1.0.x            | ❌           | ✅          | ✅          | ✅          | ✅          |
-|1.2.0.x            | ❌           | ✅          | ✅          | ✅          | ✅          |
+| 0.19.0.x           | ✅          | ✅          | ✅          | ❌          | ❌          | ❌          |
+| 0.20.0.x           | ✅          | ✅          | ✅          | ✅          | ❌          | ❌          |
+| 0.21.1.x           | ✅          | ✅          | ✅          | ✅          | ❌          | ❌          |
+| 1.0.0.x           | ❌           | ✅          | ✅          | ✅          | ❌          | ❌          |
+|1.1.0.x            | ❌           | ✅          | ✅          | ✅          | ✅          | ❌          |
+|1.2.0.x            | ❌           | ✅          | ✅          | ✅          | ✅          | ❌          |
+|1.4.x              | ❌           | ✅          | ✅          | ✅          | ✅          | ✅          |
 
 
 ##  dbt dependent packages version compatibility

@@ -106,7 +106,7 @@ class TeradataAdapter(SQLAdapter):
                 LIST_RELATIONS_MACRO_NAME,
                 kwargs=kwargs
             )
-        except dbt.exceptions.RuntimeException as e:
+        except dbt.exceptions.DbtRuntimeError as e:
             errmsg = getattr(e, 'msg', '')
             if f"Teradata database '{schema_relation}' not found" in errmsg:
                 return []
@@ -118,7 +118,7 @@ class TeradataAdapter(SQLAdapter):
         relations = []
         for row in results:
             if len(row) != 4:
-                raise dbt.exceptions.RuntimeException(
+                raise dbt.exceptions.DbtRuntimeError(
                     f'Invalid value from "teradata__list_relations_without_caching({kwargs})", '
                     f'got {len(row)} values, expected 4'
                 )
@@ -160,7 +160,7 @@ class TeradataAdapter(SQLAdapter):
         manifest: Manifest,
     ) -> agate.Table:
         if len(schemas) != 1:
-            dbt.exceptions.raise_compiler_error(
+            dbt.exceptions.raise CompilationError(
                 f'Expected only one schema in _get_one_catalog() for Teradata adapter, found '
                 f'{schemas}'
             )
@@ -215,7 +215,7 @@ class TeradataAdapter(SQLAdapter):
         elif location == 'prepend':
             return f"concat('{value}', cast(trim({add_to}) as varchar(63800))"
         else:
-            raise RuntimeException(
+            raise DbtRuntimeError(
                 f'Got an unexpected location value of "{location}"'
             )
 
