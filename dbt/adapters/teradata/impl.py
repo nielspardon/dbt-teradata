@@ -132,14 +132,6 @@ class TeradataAdapter(SQLAdapter):
 
         return relations
 
-    def get_relation(
-        self, database: str, schema: str, identifier: str
-    ) -> Optional[BaseRelation]:
-        if not self.Relation.include_policy.database:
-            database = None
-
-        return super().get_relation(database, schema, identifier)
-
     def get_catalog(self, manifest):
         schema_map = self._get_catalog_schemas(manifest)
         with executor(self.config) as tpe:
